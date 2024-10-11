@@ -7,12 +7,11 @@ int main()
 
 	std::cout << "Enter your age in years: ";
 	std::cin >> age;
-	if (std::cin.fail())
+	while (std::cin.fail())
 	{
-
 		std::cin.clear();
 		std::cin.ignore(10000, '\n');
-		std::cout << "Input error:" << std::endl;
+		std::cout << "Invalid input, expected number: " << std::endl;
 		std::cout << "Enter a number: ";
 		std::cin >> age;
 	}
