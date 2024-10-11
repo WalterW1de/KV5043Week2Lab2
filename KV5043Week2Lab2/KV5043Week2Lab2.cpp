@@ -1,18 +1,12 @@
 #include <iostream>
+#include <string>
 
 int main()
 {
-	char name[20];
-	std::cout << "Enter your name: ";
-	std::cin.getline(name, 20);
-	while (std::cin.fail())
-	{
-		std::cin.clear();
-		std::cin.ignore(10000, '\n');
-		std::cout << "Input error:" << std::endl;
-		std::cin.getline(name, 20);
-	}
-	std::cout << "Hello, " << name << "!" << std::endl;
+	std::string playerName;
+	std::cout << "Enter your full name: ";
+	std::getline(std::cin, playerName);
+	std::cout << "Hello, " << playerName << "!" << std::endl;
 
 		return 0;
 }
